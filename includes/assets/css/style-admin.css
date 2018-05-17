@@ -1,0 +1,15 @@
+.col-box {
+    display: inline-block;
+    width: 30%;
+    float: left;
+}
+
+.save_button_menu {
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.box-color-select {
+    position: absolute;
+}
+
