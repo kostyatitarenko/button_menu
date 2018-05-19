@@ -41,7 +41,7 @@ function save_options(
     }
     $color_background = trim($color_background);
     if ($color_background == '') {
-        $color_background = 'transparent';
+        $color_background = '#dbdbdb';
     }
     $font_size = trim($font_size);
     if ($font_size == '') {

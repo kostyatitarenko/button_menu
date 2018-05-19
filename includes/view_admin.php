@@ -239,6 +239,15 @@ $value_name_menu_in_db = getShowButtonInMobile();
             }
 
         }
+        <?php 
+            $color_text_menu =getColorText();
+            $color_text_menu_value = $color_text_menu[0][0]; 
+            $color_background_menu =getColorBackground();
+            $color_background_menu_value = $color_background_menu[0][0];
+        ?>
+
+        $('.box-color-text-select input[type="text"]').val('<?php echo $color_text_menu_value; ?>');
+        $('.box-color-background-select input[type="text"]').val('<?php echo $color_background_menu_value; ?>');
 
     });
 </script>

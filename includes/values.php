@@ -40,7 +40,7 @@ $font_size_menu_value = $font_size_menu[0][0];
 $args_menu_button = array(
 	'theme_location'  => $name_menu_value,
 	'menu'            => '', 
-	'container'       => 'div', 
+	'container'       => '', 
 	'container_class' => '', 
 	'container_id'    => '',
 	'menu_class'      => 'menu', 
@@ -51,8 +51,9 @@ $args_menu_button = array(
 	'after'           => '',
 	'link_before'     => '',
 	'link_after'      => '',
-	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+	'items_wrap'      => '<ul id="%1$s" style="color:'.$color_text_menu_value.'" class="%2$s">%3$s</ul>',
 	'depth'           => 0,
 	'walker'          => '',
 );
+
 

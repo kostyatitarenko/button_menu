@@ -44,7 +44,7 @@ function button_menu_install()
         $wpdb->query($sql);
 
         $sql2 = "INSERT INTO `$table_name` (show_button,show_in_mobile, name_menu, position, structure, form, type_button,type_button_value,type_button_value_icon, color_text, color_background,font_size) 
-                VALUES ('yes','yes','%s','right_bottom', 'horizontal_line','squire','text','Menu','fa-reorder', '#000000','transparent','14');";
+                VALUES ('yes','yes','%s','right_bottom', 'horizontal_line','squire','text','Menu','fa-reorder', '#000000','#dbdbdb','14');";
         $query = $wpdb->prepare($sql2, $name_menu_first);
         $wpdb->query($query);
     }
