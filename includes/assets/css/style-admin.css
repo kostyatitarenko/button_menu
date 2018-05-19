@@ -13,3 +13,14 @@
     position: absolute;
 }
 
+.select_font_awesome {
+    font-family: 'FontAwesome', 'sans-serif';
+}
+
+.hide-field {
+    display: none;
+}
+
+.show-field {
+    display: block;
+}

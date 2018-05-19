@@ -7,6 +7,8 @@ function save_options(
     $structure,
     $form,
     $type_button,
+    $type_button_value,
+    $type_button_value_icon,
     $color_text,
     $color_background,
     $font_size
@@ -25,6 +27,14 @@ function save_options(
     $structure = trim($structure);
     $form = trim($form);
     $type_button = trim($type_button);
+    $type_button_value = trim($type_button_value);
+    if($type_button_value == ''){
+        $type_button_value = 'Menu';
+    }
+    $type_button_value_icon = trim($type_button_value_icon);
+    if($type_button_value_icon == ''){
+        $type_button_value_icon = 'fa-reorder';
+    }
     $color_text = trim($color_text);
     if ($color_text == '') {
         $color_text = '#000000';
@@ -39,15 +49,15 @@ function save_options(
     }
     
     if ($show_button == '' ||$show_in_mobile==""|| $name_menu == '' || $position == '' ||  $structure == ""
-     || $form == "" || $type_button =="" || $color_text == ""||$color_background==""
+     || $form == "" || $type_button ==""|| $type_button_value==""|| $type_button_value_icon=="" || $color_text == ""||$color_background==""
      || $font_size == "" || !is_numeric($font_size)) {
         return false;
     }
     $table = $wpdb->prefix . 'options_button_menu';
     $t ="UPDATE $table 
-        SET show_button='%s',show_in_mobile='%s', name_menu='%s', position='%s', structure='%s', form='%s',type_button ='%s', color_text ='%s',color_background='%s',font_size='%s';";
+        SET show_button='%s',show_in_mobile='%s', name_menu='%s', position='%s', structure='%s', form='%s',type_button ='%s',type_button_value ='%s',type_button_value_icon='%s', color_text ='%s',color_background='%s',font_size='%s';";
 
-    $query_update = $wpdb->prepare($t, $show_button,$show_in_mobile, $name_menu, $position, $structure, $form, $type_button, $color_text, $color_background, $font_size);
+    $query_update = $wpdb->prepare($t, $show_button,$show_in_mobile, $name_menu, $position, $structure, $form, $type_button,$type_button_value,$type_button_value_icon, $color_text, $color_background, $font_size);
     $result = $wpdb->query($query_update);
 
     if ($result === false) {
@@ -133,5 +143,21 @@ function getFontSize()
     global $wpdb;
     $tab = $wpdb->prefix . 'options_button_menu';
     $v = "SELECT font_size FROM $tab LIMIT 1;";
+    return $wpdb->get_results($v, ARRAY_N);
+}
+
+function getTypeButtonValue()
+{
+    global $wpdb;
+    $tab = $wpdb->prefix . 'options_button_menu';
+    $v = "SELECT type_button_value FROM $tab LIMIT 1;";
+    return $wpdb->get_results($v, ARRAY_N);
+}
+
+function getTypeButtonValueIcon()
+{
+    global $wpdb;
+    $tab = $wpdb->prefix . 'options_button_menu';
+    $v = "SELECT type_button_value_icon FROM $tab LIMIT 1;";
     return $wpdb->get_results($v, ARRAY_N);
 }

@@ -1,0 +1,58 @@
+#menu_button_perfect.menu_button_perfect_styles {
+    position: fixed;
+    width: auto;
+    height: auto;
+    background: red;
+    z-index: 7777;
+}
+
+#menu_button_perfect.menu_button_perfect_styles .menu li{
+    list-style: none!important;
+}
+
+#menu_button_perfect.menu_button_perfect_position_right_bottom{
+    bottom: 20px;
+    right: 20px;
+}
+
+#menu_button_perfect.menu_button_perfect_position_left_bottom{
+    bottom: 20px;
+    left: 20px;
+}
+
+#menu_button_perfect.menu_button_perfect_position_right_top{
+    top: 20px;
+    right: 20px;
+}
+
+#menu_button_perfect.menu_button_perfect_position_left_top{
+    top: 20px;
+    left: 20px;
+}
+
+#menu_button_perfect.menu_button_perfect_structure_horizontal_line .menu li{
+    display: inline-block;
+}
+
+#menu_button_perfect.menu_button_perfect_structure_tree{
+    
+}
+
+#menu_button_perfect.menu_button_perfect_structure_vertical_line{
+    display: block;
+}
+
+#menu_button_perfect .button_meu_perfect{
+    width: 100px;
+    height: 100px;
+    background: green;
+    position: relative;
+}
+
+#menu_button_perfect .button_meu_perfect>*{
+    position: absolute;
+    /* font-size: 20px; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) translateZ(0);
+}

@@ -12,10 +12,13 @@ if (!empty($_POST)) {
         $_POST['structure'],
         $_POST['form'],
         $_POST['type_button'],
+        $_POST['type_button_value'],
+        $_POST['type_button_value_icon'],
         $_POST['color_text'],
         $_POST['color_background'],
         $_POST['font_size']
     )) {
+        // print_r($_POST);
     }
 } else {
     $show_button = '';
@@ -25,6 +28,8 @@ if (!empty($_POST)) {
     $structure = '';
     $form = '';
     $type_button = '';
+    $type_button_value = '';
+    $type_button_value_icon='';
     $color_text = '';
     $color_background='';
     $font_size = '';
@@ -171,17 +176,22 @@ $value_name_menu_in_db = getShowButtonInMobile();
         </select>
         <br>
 
-        <?php  $value_name_menu_in_db = getTypeButton(); ?>
+        <?php  $value_name_menu_in_db5 = getTypeButton(); ?>
 
         <h2>Selection button</h2>
-        <input <?php if ($value_name_menu_in_db[0][0]=='icon') {
-            echo 'checked';
-        } ?> type="radio" id="icon_button" name="type_button" value="icon">Icon Button
+        <input <?php if ($value_name_menu_in_db5[0][0]=='icon') {
+            echo 'checked="true"';
+        } ?> type="radio" id="icon_button" name="type_button" value="icon">Icon Button &nbsp; &nbsp;
+        
+        <input <?php if ($value_name_menu_in_db5[0][0]=='text') {
+            echo 'checked="true"';
+        } ?> type="radio" id="text_button" name="type_button" value="text">Text Button
         <br>
-        <input <?php if ($value_name_menu_in_db[0][0]=='text') {
-            echo 'checked';
-        } ?> type="radio" id="text_button" name="type_button" value="text">Text BUtton
-        <br>
+
+        <?php include ('fontawesome-select.php'); ?>
+        <input class="<?php if ($value_name_menu_in_db5[0][0]=='text') { echo 'show-field'; }else{ echo 'hide-field';} ?>  " 
+        type="text" id="text_in_button" name="type_button_value" 
+        value="<?php $value_name_menu_in_db=getTypeButtonValue(); echo $value_name_menu_in_db[0][0]; ?>">
 
 
         <?php  $value_name_menu_in_db1 = getColorText(); ?>

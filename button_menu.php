@@ -25,9 +25,12 @@ function button_menu_install()
             `structure` varchar(40) NOT NULL,
             `form` varchar(40) NOT NULL,
             `type_button` varchar(40) NOT NULL,
+            `type_button_value` varchar(40) NOT NULL,
+            `type_button_value_icon` varchar(40) NOT NULL,
             `color_text` varchar(40) NOT NULL,
             `color_background` varchar(40) NOT NULL,
             `font_size` varchar(40) NOT NULL
+            
             -- `value_option` varchar(40) NOT NULL,
             --  PRIMARY KEY(`id_option`)
         ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT = 1;";
@@ -40,8 +43,8 @@ function button_menu_install()
         }
         $wpdb->query($sql);
 
-        $sql2 = "INSERT INTO `$table_name` (show_button,show_in_mobile, name_menu, position, structure, form, type_button, color_text, color_background,font_size) 
-                VALUES ('yes','yes','%s','right_bottom', 'horizontal_line','squire','text', '#000000','transparent','14');";
+        $sql2 = "INSERT INTO `$table_name` (show_button,show_in_mobile, name_menu, position, structure, form, type_button,type_button_value,type_button_value_icon, color_text, color_background,font_size) 
+                VALUES ('yes','yes','%s','right_bottom', 'horizontal_line','squire','text','Menu','fa-reorder', '#000000','transparent','14');";
         $query = $wpdb->prepare($sql2, $name_menu_first);
         $wpdb->query($query);
     }
