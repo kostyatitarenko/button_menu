@@ -1,5 +1,5 @@
 <?php
- include_once("/../includes/values.php");
+ include_once(dirname(__FILE__)."/../includes/values.php");
 
  if ($show_button_menu_value == 'yes') {
      ?>
@@ -20,10 +20,7 @@ $class_menu;
         $class_menu.= ' no_mobile_menu_button';
      }
     
-    
      ?>
-
-
 
 
 <div id="menu_button_perfect" class="menu_button_perfect_styles  <?php echo $class_menu; ?>">
@@ -45,20 +42,11 @@ $class_menu;
      } ?>
 
      <div class="close_button"></div>
-     <!-- <img class="close_button" src="<?php echo plugin_dir_url(__FILE__);  ?>/images/cancel.svg" alt="close"> -->
+
     </div>
     <?php wp_nav_menu($args_menu_button); ?>
 
-    <!-- <div class="btn">
-  <button class="open_btn">+</button>
-  <nav class="circle-nav"> 
-    <div class="item1">1</div>
-    <div class="item2">2</div>
-    <div class="item3">3</div>
-    <div class="item4">4</div>
-    <div class="item5">5</div>
-  </nav>
-</div> -->
+
 
 </div>
 
@@ -68,12 +56,10 @@ jQuery(document).ready(function ($) {
         $(".circle-nav div").toggleClass("open");
     });
 
-
-
-    var menuList = document.querySelectorAll('#menu_button_perfect #menu-main-menu li');
-    var containerMenu = document.querySelector('#menu_button_perfect #menu-main-menu');
-    var vertical_line = $("#menu_button_perfect.menu_button_perfect_structure_vertical_line #menu-main-menu");
-    var horizontal_line = $("#menu_button_perfect.menu_button_perfect_structure_horizontal_line #menu-main-menu");
+    var menuList = document.querySelectorAll('#menu_button_perfect #menu_button_perfect_list li');
+    var containerMenu = document.querySelector('#menu_button_perfect #menu_button_perfect_list');
+    var vertical_line = $("#menu_button_perfect.menu_button_perfect_structure_vertical_line #menu_button_perfect_list");
+    var horizontal_line = $("#menu_button_perfect.menu_button_perfect_structure_horizontal_line #menu_button_perfect_list");
 
     $('.button_meu_perfect').on("click", function () {
          $('.close_button').toggleClass('show-close');
@@ -83,10 +69,7 @@ jQuery(document).ready(function ($) {
     
 
     if ($("#menu_button_perfect").hasClass("menu_button_perfect_structure_vertical_line") && $("#menu_button_perfect").hasClass("menu_button_perfect_position_left_bottom")) {
-        // var menuList = [].slice.call(menuList, 0).reverse();
-        // for (var index = 0; index < menuList.length; index++) {
-        //     containerMenu.appendChild(menuList[index]);
-        // }
+     
         $('.button_meu_perfect').on("click", function () {
             vertical_line.toggleClass('show_menu_toogle_vertical_line');
             var children = vertical_line.children();
@@ -219,8 +202,6 @@ jQuery(document).ready(function ($) {
             })
         });
     }
-
-
 
 });
 

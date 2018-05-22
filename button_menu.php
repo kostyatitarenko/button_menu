@@ -30,9 +30,6 @@ function button_menu_install()
             `color_text` varchar(40) NOT NULL,
             `color_background` varchar(40) NOT NULL,
             `font_size` varchar(40) NOT NULL
-            
-            -- `value_option` varchar(40) NOT NULL,
-            --  PRIMARY KEY(`id_option`)
         ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT = 1;";
 
         $keys = array_keys($all_menu);
@@ -77,6 +74,7 @@ function button_menu_admin_menu()
 
 function button_menu_editor()
 {
+    
     include_once("includes/view_admin.php");
 }
 add_action('admin_menu', 'button_menu_admin_menu');
@@ -87,8 +85,6 @@ function showButton()
     include_once("view/show_button.php");
 }
 add_action('wp_head', 'showButton');
-
-
 
 
 

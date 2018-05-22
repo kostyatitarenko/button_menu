@@ -2,8 +2,6 @@
 
 <?php $value_name_menu_in_db3 = getTypeButtonValueIcon(); ?>
 
-
-
 <select id="icon_in_button" class="select_font_awesome <?php if ($value_name_menu_in_db5[0][0]=='icon') {
     echo 'show-field';
 } else {

@@ -6,7 +6,7 @@
 #menu_button_perfect.menu_button_perfect_styles .button_meu_perfect{
     position: fixed;
 }
-#menu_button_perfect.menu_button_perfect_styles #menu-main-menu{
+#menu_button_perfect.menu_button_perfect_styles #menu_button_perfect_list{
     position: fixed;
     z-index: 777;
 }
@@ -58,7 +58,7 @@
     transform: translate(-50%, -50%) translateZ(0);
 }
 
-#menu_button_perfect #menu-main-menu li {
+#menu_button_perfect #menu_button_perfect_list li {
     height: 80px;
     width: 80px;
     text-align: center;
@@ -66,20 +66,20 @@
     position: relative;
 }
 
-#menu_button_perfect #menu-main-menu li  a{
+#menu_button_perfect #menu_button_perfect_list li  a{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) translateZ(0);
 }
 
-#menu_button_perfect #menu-main-menu {
+#menu_button_perfect #menu_button_perfect_list {
     overflow: hidden;
     opacity: 0;
     position: absolute;
 }
 
-#menu_button_perfect.menu_button_perfect_structure_vertical_line #menu-main-menu{
+#menu_button_perfect.menu_button_perfect_structure_vertical_line #menu_button_perfect_list{
     max-height: 0;
     bottom: 0;
     transition: opacity 0.2s ease, max-height 2s ease;
@@ -88,7 +88,7 @@
     width: 100px;
     height: 100%;
 }
-#menu_button_perfect.menu_button_perfect_structure_vertical_line #menu-main-menu li{
+#menu_button_perfect.menu_button_perfect_structure_vertical_line #menu_button_perfect_list li{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -96,7 +96,7 @@
 }
 
 
-#menu_button_perfect.menu_button_perfect_structure_vertical_line #menu-main-menu.show_menu_toogle_vertical_line {
+#menu_button_perfect.menu_button_perfect_structure_vertical_line #menu_button_perfect_list.show_menu_toogle_vertical_line {
     opacity: 1;
     max-height: 2000px
 }
@@ -108,22 +108,22 @@
     width: 100%;
 }
 
-#menu_button_perfect.menu_button_perfect_structure_horizontal_line #menu-main-menu{
+#menu_button_perfect.menu_button_perfect_structure_horizontal_line #menu_button_perfect_list{
     max-width: 0;
     bottom:20px;
     height: 100px;
-    left: 30px;
+    left: 40px;
     transition:  0.4s ease;
     width: 100%;
     display: inline-block;
     margin-bottom: 0;
 }
 
-#menu_button_perfect #menu-main-menu li{
+#menu_button_perfect #menu_button_perfect_list li{
     position: absolute;
 }
 
-#menu_button_perfect.menu_button_perfect_structure_horizontal_line #menu-main-menu li{
+#menu_button_perfect.menu_button_perfect_structure_horizontal_line #menu_button_perfect_list li{
     display: block;
     margin-right: 20px;
     margin-top: 10px;
@@ -133,41 +133,47 @@
 
 
 
-#menu_button_perfect.menu_button_perfect_structure_horizontal_line #menu-main-menu.show_menu_toogle_horizontal_line {
+#menu_button_perfect.menu_button_perfect_structure_horizontal_line #menu_button_perfect_list.show_menu_toogle_horizontal_line {
     opacity: 1;
     max-width: 1920px;
 }
 
-#menu_button_perfect.menu_button_perfect_position_right_bottom.menu_button_perfect_structure_horizontal_line #menu-main-menu,
-#menu_button_perfect.menu_button_perfect_position_right_bottom.menu_button_perfect_structure_vertical_line #menu-main-menu
+#menu_button_perfect.menu_button_perfect_position_right_bottom.menu_button_perfect_structure_horizontal_line #menu_button_perfect_list,
+#menu_button_perfect.menu_button_perfect_position_right_bottom.menu_button_perfect_structure_vertical_line #menu_button_perfect_list
  {
     right: 20px;
     left: inherit;
 } 
 
-#menu_button_perfect.menu_button_perfect_position_right_top.menu_button_perfect_structure_vertical_line #menu-main-menu
+#menu_button_perfect.menu_button_perfect_position_right_top.menu_button_perfect_structure_vertical_line #menu_button_perfect_list
 {
     right: 20px;
     left: inherit;
     bottom: inherit;
     top: 40px;
 }
-#menu_button_perfect.menu_button_perfect_position_left_top.menu_button_perfect_structure_vertical_line #menu-main-menu{
+#menu_button_perfect.menu_button_perfect_position_left_top.menu_button_perfect_structure_vertical_line #menu_button_perfect_list{
     left: 20px;
     right: inherit;
     bottom: inherit;
     top: 40px;
 }
-#menu_button_perfect.menu_button_perfect_position_right_top.menu_button_perfect_structure_horizontal_line #menu-main-menu {
+#menu_button_perfect.menu_button_perfect_structure_vertical_line.menu_button_perfect_position_left_bottom #menu_button_perfect_list,
+#menu_button_perfect.menu_button_perfect_structure_vertical_line.menu_button_perfect_position_right_bottom #menu_button_perfect_list{
+    bottom: 20px
+}
+
+#menu_button_perfect.menu_button_perfect_position_right_top.menu_button_perfect_structure_horizontal_line #menu_button_perfect_list {
     right: 20px;
     left: inherit;
     bottom: inherit;
     top:20px;
 }
 
-#menu_button_perfect.menu_button_perfect_position_left_top.menu_button_perfect_structure_horizontal_line #menu-main-menu {
+#menu_button_perfect.menu_button_perfect_position_left_top.menu_button_perfect_structure_horizontal_line #menu_button_perfect_list {
     top:20px;
 }
+
 
 
 .close_button{
@@ -208,16 +214,25 @@
     transition: 0.4s ease;
 }
 
-#menu_button_perfect.from_menu_bubble #menu-main-menu li,
+#menu_button_perfect.from_menu_bubble #menu_button_perfect_list li,
 #menu_button_perfect.from_menu_bubble .button_meu_perfect{
     border-radius: 50%;
 }
-#menu_button_perfect #menu-main-menu li,
-#menu_button_perfect #menu-main-menu li a{
+#menu_button_perfect #menu_button_perfect_list li,
+#menu_button_perfect #menu_button_perfect_list li a{
     color: inherit!important;
 }
-#menu_button_perfect #menu-main-menu li a{
+#menu_button_perfect #menu_button_perfect_list li a{
     font-size: inherit!important;
+}
+
+#menu_button_perfect #menu_button_perfect_list{
+    margin-left: 0!important;
+    padding-left: 0 !important;
+}
+
+#menu_button_perfect #menu_button_perfect_list a{
+   text-decoration: none !important
 }
 
 
